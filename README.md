@@ -105,14 +105,10 @@ Through this project, I learned:
 
 ---
 
-## 📷 Screenshot
 
-(Add a screenshot of your application here.)
-
----
 
 ## 👩‍💻 Author
 
 **Ammarah Tabassum**
 
-CodeAlpha AI Internship Project
+CodeAlpha AI Internship Task01
