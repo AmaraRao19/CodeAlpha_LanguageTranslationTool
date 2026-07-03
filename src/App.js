@@ -10,6 +10,8 @@ function App() {
 
   const [translatedText, setTranslatedText] = useState("");
 
+  const [loading, setLoading] = useState(false);
+
   console.log(text);
   console.log(source);
   console.log(target);
@@ -21,6 +23,7 @@ function App() {
         alert("Please enter some text.");
         return;
     }
+      setLoading(true);
 
     try{
 
@@ -43,6 +46,11 @@ function App() {
         console.log(error);
 
         alert("Translation Failed");
+
+    }
+     finally{
+
+        setLoading(false);
 
     }
 
@@ -92,11 +100,17 @@ function App() {
 
       <br /><br />
 
-      <button onClick={translateText}>
-        Translate
-      </button>
+      <button onClick={translateText} disabled={loading}>
+    {loading ? "Translating..." : "Translate"}
+</button>
 
       <h2>Translated Text</h2>
+      {loading && (
+    <div className="spinner-container">
+        <div className="spinner"></div>
+        <p>Translating...</p>
+    </div>
+)}
 
       <p>{translatedText}</p>
     </div>
